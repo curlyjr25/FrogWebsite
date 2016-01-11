@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    Surgeries
+{% endblock %}
+{% block content %}
+<h1>Surgeries</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Surgery Number</th>
+            <th>Frog Name</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.surgery_number }}</td>
+            <td>{{ object.frog }}</td>
+            <td>{{ object.date }}</td>
+            <td>
+                <a href="{% url 'surgery_update' object.pk %}">Edit</a>
+                <a href="{% url 'surgery_delete' object.pk %}">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

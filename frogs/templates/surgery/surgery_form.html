@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block title %}
+{% if object.pk %}
+    Update Surgery
+{% else %}
+    Create Surgery
+{% endif %}
+{% endblock %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+{% endblock %}
+{% block content %}
+    {% if object.pk %}
+        <h2>Update Surgery</h2>
+    {% else %}
+        <h2>Create Surgery</h2>
+    {% endif %}
+
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {% crispy form %}
+    <input class="btn btn-primary" type="submit" value="Save">
+
+    </form>
+{% endblock %}
+{% block javascript %}
+{{ block.super }}
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#id_date" ).datepicker();
+    });
+</script>
+{% endblock %}
