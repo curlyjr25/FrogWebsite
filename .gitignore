@@ -71,4 +71,4 @@ node_modules/
 frogs/assets-src/vendor/
 .sass-cache/
 
-get-pip.py
+frogs/get-pip.py
