@@ -70,3 +70,5 @@ node_modules/
 # bower packages
 frogs/assets-src/vendor/
 .sass-cache/
+
+get-pip.py
