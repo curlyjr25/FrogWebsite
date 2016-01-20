@@ -10,4 +10,5 @@ urlpatterns = [
     # url(r'^$', 'tt.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(surgery.urls)),
+    url(r'^', include('frogblog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

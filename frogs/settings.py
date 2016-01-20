@@ -39,7 +39,7 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = (
-    'surgery',
+    'surgery','frogblog',
 )
 
 THIRD_PARTY_APPS = (
