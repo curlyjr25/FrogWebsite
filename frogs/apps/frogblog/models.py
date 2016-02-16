@@ -22,7 +22,7 @@ class Post(models.Model):
 		
 		
 		
-	def published(self):
+	def published (self):
 		
 		self.published_date = timezone.now()
 		

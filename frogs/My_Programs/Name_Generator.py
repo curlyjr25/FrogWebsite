@@ -4,13 +4,14 @@
 
 from random import randint
 
-fp = open("Names_Test.txt", "r") 
+fp = open("Names_Test.txt", "r") #randomly generates a line number and saves name into Used_Names.txt
 fs = open("Used_Names.txt", "a") 
 lines = fp.readlines()
 x = len(lines)
 y = randint(0, x-1)
 i = 0
-Name = lines[y]
+Name = lines[y]				#probably redundant to have because the for loop does the same thing.  Wasn't sure how to save the out put of the for loop to use in the next for loop.
+
 for line in lines:				
 	if i == y:
 		print(line)
@@ -20,10 +21,15 @@ for line in lines:
 fp.close()
 fs.close()
 						
-fp = open("Names_Test.txt", "w") #this part deletes the generated name from the name database
+fp = open("Names_Test.txt", "w") #Writes all names not found in Used_Names.txt into Names_Test.txt but it is not working.  Just end up with a blank document.
+fp.close()
 
+fp = open("Names_Test.txt", "a")
 for lineA in lines:
 	if lineA != Name:
-		fp.write(LineA)
+		fp.write(lineA)
 			
-fp.close()
+fp.close()						#I get this error  File "<stdin>", line 5
+    							#fp.close()	
+    							# ^
+								#SyntaxError: invalid syntax
